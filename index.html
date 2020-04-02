@@ -6,6 +6,8 @@
   <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
   <link href="assets/css/reset.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+  <script src="assets/js/codes.js"></script>
+  <script src="assets/js/index.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
@@ -16,10 +18,13 @@
     </div>
     <img class="burger-button-img" src="assets/img/button.png" alt="burger button">
     <ul class="nav-buttons">
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Design</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Eletrônica</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Matemática</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Programação</a></li>
+      {{#each portfolio}}
+          <li class="nav-item"><a class="nav-item-link" href="categoria.html?key={{@key}}">{{this.secao}}</a></li>
+      {{/each}}
+      <!-- <li class="nav-item"><a class="nav-item-link" href="categoria.html">Design</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="eletronica.html">Eletrônica</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="matematica.html">Matemática</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="programacao.html">Programação</a></li> -->
     </ul>
   </header>
 
@@ -39,7 +44,21 @@
     </div>
 
     <ul class="categorias">
-      <li class="categorias-item">
+      {{#each portfolio}}
+        <li class="categorias-item">
+            <img class="categorias-img" src="assets/img/{{this.imagem}}" alt="{{this.secao}}">
+          <div class="categorias-description">
+            <p>
+              <a class = "categorias-description-title" href="categoria.html?key={{@key}}">{{this.secao}}</a>
+            </p>
+
+            <p>
+              {{this.categoria}}
+            </p>
+          </div>
+        </li>
+      {{/each}}
+      <!-- <li class="categorias-item">
         <img class="categorias-img" src="assets/img/design.png" alt="design">
         <div class="categorias-description">
           <p>
@@ -85,7 +104,7 @@
             Projetos que envolvem conceitos de Programação.
           </p>
         </div>
-      </li>
+      </li> -->
     </ul>
   </main>
 </body>

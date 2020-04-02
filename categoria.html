@@ -7,6 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
   <meta charset="utf-8"/>
+  <script src="assets/js/codes.js"></script>
+  <script src="assets/js/categoria.js"></script>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body class="body">
@@ -16,36 +18,43 @@
     </div>
     <img class="burger-button-img" src="assets/img/button.png" alt="burger button">
     <ul class="nav-buttons">
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Design</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Eletrônica</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Matemática</a></li>
-      <li class="nav-item"><a class="nav-item-link" href="categoria.html">Programação</a></li>
+      {{#each portfolio}}
+          <li class="nav-item"><a class="nav-item-link" href="categoria.html?key={{@key}}">{{this.secao}}</a></li>
+      {{/each}}
+      <!-- <li class="nav-item"><a class="nav-item-link" href="categoria.html">Design</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="eletronica.html">Eletrônica</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="matematica.html">Matemática</a></li>
+      <li class="nav-item"><a class="nav-item-link" href="programacao.html">Programação</a></li> -->
     </ul>
   </header>
 
   <main>
     <div class="container-1">
-      <img class="main-img" src="assets/img/dt.png" alt="dt">
+      <img class="main-img" src="assets/img/{{imagem}}" alt="{{secao}}">
 
       <div class="dados">
+        <h2 class="title">{{secao}}</h2>
+
         <p class="description">
-          Projetos que usam conceitos de Design Thinking, prototipagem, user experience e muito mais
+          {{categoria}}
         </p>
       </div>
     </div>
 
     <ul class="categorias">
-      <li class="categorias-item">
-        <img class="categorias-img" src="assets/img/Robozito.jpeg" alt="robozito">
-        <div class="categorias-description">
-          <p>
-            <a class = "categorias-description-title" href="projeto.html">Robozito</a>
-          </p>
-          <p>
-            Primeiro projeto da disciplina de design que consiste em construir um robô. Aka Robozito!
-          </p>
-        </div>
-      </li>
+      {{#each projetos}}
+        <li class="categorias-item">
+          <img class="categorias-img" src="assets/img/{{this.mini_imagem}}" alt="this.titulo">
+          <div class="categorias-description">
+            <p>
+              <a class = "categorias-description-title" href="projeto.html?key={{@key}}">{{this.titulo}}</a>
+            </p>
+            <p>
+              {{this.descricao}}
+            </p>
+          </div>
+        </li>
+      {{/each}}
     </ul>
   </main>
 </body>
