@@ -7,6 +7,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Oxanium&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Courier+Prime&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
+	<script src="assets/js/codes.js"></script>
+	<script src="assets/js/projeto.js"></script>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body class="body">
@@ -28,13 +30,13 @@
 
 	<main>
 		<div class="container-1">
-      <img class="main-img" src="assets/img/Robozito.jpeg" alt="robozito">
+      <img class="main-img" src="assets/img/{{mini_imagem}}" alt="{{titulo}}">
 
       <div class="dados">
-        <h1 class="title">Robô com Arduino</h1>
+        <h1 class="title">{{titulo}}</h1>
 
         <p class="description">
-          Processo de idealização e confecção de um robô controlado remotamente com Arduino.
+          {{descricao}}
         </p>
       </div>
     </div>
@@ -44,9 +46,9 @@
 				<div class="components">
 					<h2 class="components-init">Membros</h2>
 					<ul class="components-list">
-						<li class="components-list-item">Um dois de Oliveira Três</li>
-						<li class="components-list-item">Roberto Cubo</li>
-						<li class="components-list-item">Cauã Manuel</li>
+						<li class="components-list-item">{{this.membro1}}</li>
+						<li class="components-list-item">{{this.membro2}}</li>
+						<li class="components-list-item">{{this.membro3}}</li>
 					</ul>
 				</div>
       </li>
@@ -54,9 +56,9 @@
 				<div class="components">
 					<h2 class="components-init">Materiais</h2>
 					<ul class="components-list">
-						<li class="components-list-item">MDF para compor as peças</li>
-						<li class="components-list-item">Microcontrolador Arduino</li>
-						<li class="components-list-item">Filamento de ABS</li>
+						<li class="components-list-item">{{this.material1}}</li>
+						<li class="components-list-item">{{this.material2}}</li>
+						<li class="components-list-item">{{this.material3}}</li>
 					</ul>
 				</div>
       </li>
