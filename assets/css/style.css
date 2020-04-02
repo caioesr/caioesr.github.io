@@ -188,10 +188,11 @@
   }
 
   .nav-buttons{
-    position: fixed;
+    position: absolute;
     width: 40%;
     height: 30%;
-    left: -1000px;
+    left: -400px;
+    top: 0px;
     display: block;
     transition: 1s;
     background-color: #45b1f5;
